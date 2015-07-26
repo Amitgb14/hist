@@ -1,4 +1,11 @@
-# hist
+# Welcome to Bash history across multiple machine's documentation!
+
+build doc
+
+$make html
+
+
+
 
 Add node :
 
