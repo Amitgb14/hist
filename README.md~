@@ -1,1 +1,12 @@
 # hist
+
+Add node :
+
+$ssh-copy-id node_ip
+
+Run script :
+
+$ python main.py --sync
+
+$python main.py  --m<id>
+
