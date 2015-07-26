@@ -6,6 +6,7 @@ $ssh-copy-id node_ip
 
 
 Save record in host.cfg file
+
 id    IP
 
 
