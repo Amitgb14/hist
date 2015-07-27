@@ -21,9 +21,12 @@ class Hist:
     for arg in self.arg:
       if arg == '--sync':
         self.sync = 1
+	self.readConf()
       elif arg[:3] == '--m':
 	self.machineid.append(arg[3:])
-    self.readConf()
+	self.readConf()
+      elif arg[:5] == '--add':
+	self.write(arg[5:])
 
   def readConf(self):
     machines = [line.strip().split() for line in open(HOST_CFG, "r").readlines() if not line.startswith('#')]
@@ -41,6 +44,20 @@ class Hist:
       print "Retrive from all machine"
       for machine in self.machines:
         self.connect(self.machines[machine])
+
+  def write(self, machine):
+    print "connect new machine : "+machine
+    cmd = "ssh-copy-id "+machine
+    execute = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+    status = execute.wait()
+    if status:
+      print "Error : ",execute.communicate()[1]
+      sys.exit(status)
+    print "Successfully connected "+machine
+    number_of_node = len([line.strip().split() for line in open(HOST_CFG, "r").readlines() if not line.startswith('#')])
+    tmpfile = open(HOST_CFG, "a")
+    tmpfile.write("%d     %s\n"%(number_of_node+1, machine))
+    tmpfile.close()
 
   def connect(self, machine):
     print "try to connect "+machine
@@ -69,9 +86,4 @@ class Hist:
 
 if __name__ == '__main__':
   
-  if len(sys.argv) > 1:
-    run = Hist(sys.argv[1:])
-  else:
-    print "python main.py [option]"
-    print "--sync     Retrive from all machine"
-    print "--m<id>    Retrive from single machine"
+  d = Hist(sys.argv[1:])
