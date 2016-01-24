@@ -81,8 +81,8 @@ class Hist:
       self.printHistory(filename)
 
   def printHistory(self, filename):
-    with open(filename) as h:
-      print h.read()
+    with open(filename) as fread:
+      print fread.read()
 
 if __name__ == '__main__':
   
