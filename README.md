@@ -14,7 +14,11 @@ Add node :
 
 Save record in host.cfg file
 
-id    IP
+-----------------------------
+ID      | IP Address        |
+-----------------------------
+1       | 192.168.0.x       |
+-----------------------------
 
 
 Run script :
