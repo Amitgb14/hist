@@ -21,7 +21,7 @@ Add new node
 -------------
 
 ```
-    $ssh-copy-id <node> 
+    $ ssh-copy-id <node> 
 ```
 
 Write Host file
@@ -29,7 +29,7 @@ Write Host file
 
 host.cfg
 
-Manually write 
+Manually write node with id 
 
 ```
   -----------------------------
@@ -39,9 +39,7 @@ Manually write
   -----------------------------
 ```
 
-By command
-
 Add node by command-promot
 ```
-    $python main.py --add192.168.1.2
+    $ python main.py --add192.168.1.2
 ```
