@@ -1,34 +1,47 @@
-# Welcome to Bash history across multiple machine's documentation!
+# Welcome to hist
 
-build doc
-
-```$make html```
+hist is simple tool used to sync and get bash history from multiple node's.
 
 
+How to run
+-----------
+
+```
+    $ python main.py
+```
+```
+    $ python main.py --sync [sync all machine]
+```
+```
+    $ python main.py --m<inode-id>
+```
 
 
-Add node :
+Add new node
+-------------
 
-```$ssh-copy-id node_ip```
+```
+    $ssh-copy-id <node> 
+```
 
+Write Host file
+---------------
 
-Save record in host.cfg file
+host.cfg
 
------------------------------
-ID      | IP Address        |
------------------------------
-1       | 192.168.0.x       |
------------------------------
+Manually write 
 
+```
+  -----------------------------
+  |  ID  | Node IP Address    |
+  -----------------------------
+  |  1   | 127.0.0.1          |
+  -----------------------------
+```
 
-Run script :
-
-```$python main.py --sync```
-
-```$python main.py --m<id>```
-
-
+By command
 
 Add node by command-promot
-
-```$python main.py --add192.168.1.2```
+```
+    $python main.py --add192.168.1.2
+```
