@@ -184,10 +184,10 @@ class Hist:
         if args.location:
             self.location = args.location
         if self.all:
-            print ("Start Sync All listed nodes")
+            print("Start Sync All listed nodes")
             self.collect_sync()
         elif self.single_node:
-            print ("Start Sync {} nodes".format(node_ip))
+            print("Start Sync {} nodes".format(node_ip))
             self.collect_sync(node_ip)
         elif self.print_hist and hist_node_ip:
             self.show_history(hist_node_ip)
