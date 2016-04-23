@@ -1,8 +1,8 @@
 # Welcome to hist
 
-hist is simple tool used to sync and get bash history from remote node's.
-Save bash history in default home direcotry in 
-```.<ip_address>@bash_history``` file format. 
+hist is simple tool used to sync and get bash history from remote node's and
+save bash history in default home direcotry in ```.<ip_address>@bash_history``` file format.
+
 
 How to run
 -----------
