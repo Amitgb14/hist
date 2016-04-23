@@ -1,27 +1,37 @@
 # Welcome to hist
 
-hist is simple tool used to sync and get bash history from multiple node's.
-
+hist is simple tool used to sync and get bash history from remote node's.
+Save bash history in default home direcotry in 
+```.<ip_address>@bash_history``` file format. 
 
 How to run
 -----------
 
 ```
-    $ python main.py
+    $ python run.py
 ```
+
+Sync all nodes
 ```
-    $ python main.py --sync [sync all machine]
+    $ python run.py -s
 ```
+
+Sync from 127.0.0.1 node
 ```
-    $ python main.py --m<inode-id>
+    $ python run.py -m 127.0.0.1
+```
+
+Save sync file in user defined location
+```
+    $ python run.py -m 127.0.0.1 -d .
 ```
 
 
-Add new node
+Copy ssh key
 -------------
 
 ```
-    $ ssh-copy-id <node> 
+    $ ssh-copy-id <node_ip_address> 
 ```
 
 Write Host file
@@ -29,17 +39,18 @@ Write Host file
 
 host.cfg
 
-Manually write node with id 
+Manually add node 
 
 ```
-  -----------------------------
-  |  ID  | Node IP Address    |
-  -----------------------------
-  |  1   | 127.0.0.1          |
-  -----------------------------
+  -----------------
+  | IP Address    |
+  -----------------
+  | 127.0.0.1     |
+  -----------------
 ```
 
 Add node by command-promot
 ```
-    $ python main.py --add192.168.1.2
+    $ python main.py -a 192.168.1.2
 ```
+
